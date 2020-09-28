@@ -1,0 +1,221 @@
+@import "partials/settings";
+@import "partials/typography";
+@import "partials/global";
+@import "partials/elements";
+
+@import "partials/header";
+@import "partials/cart";
+
+@import "partials/product";
+
+@import "partials/booking";
+
+.main-wrapper {
+  display: block;
+}
+
+.main-page {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  margin: 50px auto;
+}
+
+// Strona Z linkami\
+.background-1 {
+  background-image: url("../assets/pizza-1.jpg");
+}
+
+.background-2 {
+  background-image: url("../assets/pizza-2.jpg");
+}
+
+.grey-image,
+.opening-hours {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px;
+  flex: 1;
+  min-width: 310px;
+  min-height: 200px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    color: white;
+
+    h2 {
+      font-weight: bold;
+      font-size: 30px;
+    }
+
+    div {
+      display: none;
+    }
+  }
+
+  div:hover {
+    div {
+      display: block;
+
+      animation: slide-up 0.5s ease-out;
+    }
+  }
+}
+
+//Animation
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+
+// Opening
+.opening-hours {
+  background-color: red;
+}
+// Commentary
+.commentary {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: grey;
+  margin: 50px auto;
+
+  .comm-image {
+    flex: 1;
+    padding: 10px;
+    min-width: 200px;
+    min-height: 200px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .comm-quotes {
+    flex: 2;
+    min-width: 400px;
+  }
+
+  div {
+    min-width: 400px;
+  }
+}
+
+// dot looking
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+// Images
+.container-main-images {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: grey;
+  margin: 50px auto;
+
+  .main-images {
+    display: flex;
+    min-width: 200px;
+    min-height: 200px;
+    margin: 10px;
+
+    div {
+      display: none;
+      height: 100%;
+      width: 100%;
+
+      div {
+        display: block;
+      }
+
+      i {
+        font-size: 28px;
+        color: white;
+      }
+    }
+  }
+
+  // hover overlay
+  .main-images:hover {
+    #overlay {
+      display: block; /* Hidden by default */
+      width: 100%; /* Full width (cover the whole page) */
+      height: 100%; /* Full height (cover the whole page) */
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+      z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+      cursor: pointer; /* Add a pointer on hover */
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  //hover font awsome
+  div#overlay i:hover {
+    color: red;
+  }
+
+  //Background image last 6 images
+  .background-img1 {
+    background-image: url("../assets/pizza-4.jpg");
+    background-size: cover;
+  }
+
+  .background-img2 {
+    background-image: url("../assets/pizza-5.jpg");
+    background-size: cover;
+  }
+
+  .background-img3 {
+    background-image: url("../assets/pizza-6.jpg");
+    background-size: cover;
+  }
+
+  .background-img4 {
+    background-image: url("../assets/pizza-7.jpg");
+    background-size: cover;
+  }
+
+  .background-img5 {
+    background-image: url("../assets/pizza-8.jpg");
+    background-size: cover;
+  }
+
+  .background-img6 {
+    background-image: url("../assets/pizza-9.jpg");
+    background-size: cover;
+  }
+}
